@@ -1,0 +1,31 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.zdr.springcloud.userserver.entity
+  mapperLocations: classpath*:com/zdr/springcloud/userserver/mapper/*.xml
+
+
+---
+
+#开发配置
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:oracle:thin:@192.168.31.96:1521/xe
+    username: sbfpdata
+    password: sbfpdata
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+logging:
+  path: G:\\IDEA2017Projects\\spring-cloud-learning\\tickerserver\\logs
+  level:
+    root: INFO
+    org.springframework.web: error
+    org.springframework.test: info
+server:
+  port: 8000
