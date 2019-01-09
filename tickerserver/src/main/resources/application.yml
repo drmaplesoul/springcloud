@@ -2,6 +2,9 @@
 spring:
   profiles:
     active: dev
+  main:
+    allow-bean-definition-overriding: true
+
 
 #公共配置与profiles选择无关
 mybatis:
@@ -14,6 +17,10 @@ mybatis:
 #开发配置
 spring:
   profiles: dev
+  application:
+    name: cloud-provider-ticket
+  main:
+    allow-bean-definition-overriding: true
 
   datasource:
     url: jdbc:oracle:thin:@192.168.31.96:1521/xe
@@ -30,3 +37,8 @@ logging:
 
 server:
   port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8500/eureka

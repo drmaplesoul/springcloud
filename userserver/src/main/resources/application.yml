@@ -2,24 +2,27 @@
 spring:
   profiles:
     active: dev
-
-#公共配置与profiles选择无关
-mybatis:
-  typeAliasesPackage: com.zdr.springcloud.userserver.entity
-  mapperLocations: classpath*:com/zdr/springcloud/userserver/mapper/*.xml
-
-
----
-
-#开发配置
-spring:
-  profiles: dev
-
   datasource:
     url: jdbc:oracle:thin:@192.168.31.96:1521/xe
     username: sbfpdata
     password: sbfpdata
     driver-class-name: oracle.jdbc.driver.OracleDriver
+  application:
+    name: cloud-provider-user
+  main:
+    allow-bean-definition-overriding: true
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.zdr.springcloud.userserver.entity
+  mapperLocations: classpath*:com/zdr/springcloud/userserver/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+#mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.zdr.springcloud.userserver.entity
+  mapper-locations: classpath*:com/zdr/springcloud/userserver/mapper/*.xml
 
 logging:
   path: G:\\IDEA2017Projects\\spring-cloud-learning\\tickerserver\\logs
@@ -29,3 +32,9 @@ logging:
     org.springframework.test: info
 server:
   port: 8000
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8500/eureka

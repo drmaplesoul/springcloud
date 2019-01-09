@@ -1,30 +1,22 @@
 package com.zdr.springcloud.userserver.service;
 
-import com.zdr.springcloud.userserver.repositry.UserDao;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.util.Assert;
 
 @SpringBootTest(classes = UserControllerTest.class)
 @RunWith(SpringRunner.class)
-//@MapperScan("com.zdr.springcloud.userserver.repositry")
-@WebAppConfiguration
+//@ComponentScan("com.zdr.springcloud.userserver.service") //这行不加将会找不到Bean
 public class UserControllerTest {
-
-//    @Autowired
-//    UserDao userDao;
-
-    @Test
-    public void queryUsers() {
-//        Assert.notEmpty(userDao.getUserList());
-    }
+    @Autowired
+    private  UserService userService;
 
     @Test
-    public void findUser() {
+    public void helloworld(){
+        userService.sayHello();
     }
 }
