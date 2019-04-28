@@ -11,6 +11,20 @@ spring:
     name: cloud-provider-user
   main:
     allow-bean-definition-overriding: true
+  redis:
+    password:
+    database: 0
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 200
+        min-idle: 0
+        max-active: 1024
+        max-wait: 10000ms
+    host: 192.168.31.96
+    timeout: 10000ms
+    block-when-exhausted: true
+
 
 #公共配置与profiles选择无关
 mybatis:
@@ -38,3 +52,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8500/eureka
+
