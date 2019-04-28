@@ -13,21 +13,20 @@ spring:
     allow-bean-definition-overriding: true
   server:
     port: 8989
-  spring:
-    redis:
-      host: 192.168.31.96
-      port: 6379
-      # 密码 没有则可以不填
-      password:
-      # 如果使用的jedis 则将lettuce改成jedis即可
-      lettuce:
-        pool:
-          # 最大活跃链接数 默认8
-          max-active: 8
-          # 最大空闲连接数 默认8
-          max-idle: 8
-          # 最小空闲连接数 默认0
-          min-idle: 0
+  redis:
+    host: 192.168.31.96
+    port: 6379
+    # 密码 没有则可以不填
+    password:
+    # 如果使用的jedis 则将lettuce改成jedis即可
+    lettuce:
+      pool:
+        # 最大活跃链接数 默认8
+        max-active: 8
+        # 最大空闲连接数 默认8
+        max-idle: 8
+        # 最小空闲连接数 默认0
+        min-idle: 0
 
 
 #公共配置与profiles选择无关
@@ -45,7 +44,7 @@ mybatis-plus:
 logging:
   path: G:\\IDEA2017Projects\\spring-cloud-learning\\tickerserver\\logs
   level:
-    root: INFO
+    root: info
     org.springframework.web: error
     org.springframework.test: info
 server:
