@@ -42,7 +42,7 @@ mybatis-plus:
   mapper-locations: classpath*:com/zdr/springcloud/userserver/mapper/*.xml
 
 logging:
-  path: G:\\IDEA2017Projects\\spring-cloud-learning\\tickerserver\\logs
+  path: /logs
   level:
     root: info
     org.springframework.web: error
@@ -54,5 +54,5 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8500/eureka
+      defaultZone: http://192.168.31.96:8500/eureka
 
