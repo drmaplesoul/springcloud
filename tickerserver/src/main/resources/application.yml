@@ -22,14 +22,13 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-  datasource:
-    url: jdbc:oracle:thin:@192.168.31.96:1521/xe
-    username: sbfpdata
-    password: sbfpdata
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+#  datasource:
+#    url: jdbc:oracle:thin:@192.168.31.96:1521/xe
+#    username: sbfpdata
+#    password: sbfpdata#    driver-class-name: oracle.jdbc.driver.OracleDriver
 
 logging:
-  path: G:\\IDEA2017Projects\\spring-cloud-learning\\tickerserver\\logs
+  path: /logs
   level:
     root: INFO
     org.springframework.web: error
@@ -41,4 +40,4 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8500/eureka
+      defaultZone: http://192.168.31.96:8500/eureka

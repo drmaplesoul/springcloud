@@ -17,7 +17,7 @@ public class TicketController {
 
     @RequestMapping("/ticket/buy")
     public Object buyTicket(String userId,String ticketId){
-        Map res = restTemplate.getForObject("http://localhost:8000/user/"+userId, HashMap.class);
+        Map res = restTemplate.getForObject("http://localhost:8005/user/"+userId, HashMap.class);
         String userName = res.get("USERNAME").toString();
         return userName+" buy ticket "+ticketId+" success!";
     }
