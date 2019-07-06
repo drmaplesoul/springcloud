@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.zdr.springcloud</groupId>
     <artifactId>tickerserver</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>tickerserver</name>
     <description>Demo project for Spring Boot</description>
 
