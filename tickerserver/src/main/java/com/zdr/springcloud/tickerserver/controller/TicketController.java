@@ -21,5 +21,11 @@ public class TicketController {
         String userName = res.get("USERNAME").toString();
         return userName+" buy ticket "+ticketId+" success!";
     }
+    @RequestMapping("/testip")
+    public Object testip(String ip){
+        Map res = restTemplate.getForObject("http://"+ip+":8005/user/ZHANGSAN", HashMap.class);
+        String userName = res.get("USERNAME").toString();
+        return userName+" buy ticket "+ip+" success!";
+    }
 
 }
