@@ -1,6 +1,5 @@
-package com.zdr.springcloud.tickerserver.repositry;
+package com.zdr.springcloud.userserver.repositry;
 
-import com.zdr.springcloud.userserver.repositry.UserDao;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +14,8 @@ import java.util.List;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@ActiveProfiles(value = "dev")
+@SpringBootTest(classes = UserDaoTest.class)
+//@ActiveProfiles(value = "dev")
 public class UserDaoTest {
     @Autowired
     UserDao userDao;
