@@ -1,17 +1,15 @@
-package com.zdr.mputil;
+package com.zdr.mpgenerator.mputil;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.converts.OracleTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import com.zdr.springcloud.userserver.config.DataConfig;
 
 /**
  * <p>
@@ -20,7 +18,7 @@ import com.zdr.springcloud.userserver.config.DataConfig;
  */
 public class MpGenerator {
 
-    private static String outDir = "src\\main\\java";
+    private static String outDir = "mpout";
     private static String author = "drmaple";
     private static String packagePath = "com.zdr.springcloud.userserver.businesscontract";
 
