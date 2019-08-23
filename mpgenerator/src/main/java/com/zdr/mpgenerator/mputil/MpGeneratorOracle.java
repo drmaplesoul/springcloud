@@ -1,4 +1,4 @@
-package com.zdr.mputil;
+package com.zdr.mpgenerator.mputil;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
