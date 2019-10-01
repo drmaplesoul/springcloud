@@ -1,0 +1,58 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=[fe80::dd33:c52b:5e01:77c3])(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)))
+    username: sbfpdata
+    password: sbfpdata
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  application:
+    name: cloud-provider-user
+  main:
+    allow-bean-definition-overriding: true
+  server:
+    port: 8989
+  redis:
+    host: 192.168.31.96
+    port: 6379
+    # 密码 没有则可以不填
+    password:
+    # 如果使用的jedis 则将lettuce改成jedis即可
+    lettuce:
+      pool:
+        # 最大活跃链接数 默认8
+        max-active: 8
+        # 最大空闲连接数 默认8
+        max-idle: 8
+        # 最小空闲连接数 默认0
+        min-idle: 0
+
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.zdr.springcloud.venusdemo.entity
+  mapperLocations: classpath*:com/zdr/springcloud/venusdemo/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+#mybatis-plus
+mybatis-plus:
+  type-aliases-package: com.zdr.springcloud.venusdemo.entity
+  mapper-locations: classpath*:com/zdr/springcloud/venusdemo/mapper/*.xml
+
+logging:
+  path: /logs
+  level:
+    root: info
+    org.springframework.web: error
+    org.springframework.test: info
+server:
+  port: 8000
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.31.96:8500/eureka
+
