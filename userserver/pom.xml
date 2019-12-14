@@ -20,7 +20,7 @@
     </modules>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11.0</java.version>
         <docker.image.prefix>springboot</docker.image.prefix>
     </properties>
 
@@ -35,6 +35,12 @@
 <!--            <artifactId>user-api</artifactId>-->
 <!--            <version>${project.version}</version>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

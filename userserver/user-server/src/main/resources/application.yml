@@ -3,18 +3,19 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:oracle:thin:@192.168.31.96:1521:xe
-    username: sbfpdata
-    password: sbfpdata
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:mysql://106.54.229.27:3306/mysql?useUnicode=true&useSSL=true
+    username: root
+    password: bank1234
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: cloud-provider-user
   main:
     allow-bean-definition-overriding: true
-  server:
-    port: 8989
   redis:
-    host: 192.168.31.96
+    host: 106.54.229.27
+#    host: 192.168.31.96
     port: 6379
     # 密码 没有则可以不填
     password:
@@ -22,11 +23,12 @@ spring:
     lettuce:
       pool:
         # 最大活跃链接数 默认8
-        max-active: 8
+        max-active: 16
         # 最大空闲连接数 默认8
         max-idle: 8
         # 最小空闲连接数 默认0
-        min-idle: 0
+        min-idle: 1
+        max-wait: -1ms
 
 
 #公共配置与profiles选择无关
@@ -47,6 +49,11 @@ logging:
     root: info
     org.springframework.web: error
     org.springframework.test: info
+    com:
+      zdr:
+        springcloud:
+          userserver:
+            repositry: debug
 server:
   port: 8000
 

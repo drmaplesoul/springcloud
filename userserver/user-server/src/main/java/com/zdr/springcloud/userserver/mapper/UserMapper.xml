@@ -5,7 +5,7 @@
         select * from sys_user_info
     </select>
     <select id="findUser" resultType="Map">
-        select * from sys_user_info where userid =#{id}
+        select * from sys_user_info where user_id =#{id}
     </select>
 
 </mapper>
