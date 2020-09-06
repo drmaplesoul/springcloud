@@ -1,0 +1,29 @@
+server:
+  port: 8088
+  profiles:
+    active: dev
+  application:
+    name: cloud-provider-user
+  main:
+    allow-bean-definition-overriding: true
+mybatis-plus:
+  type-aliases-package: com.example.zdr.**.entity
+  mapper-locations: classpath*:com/example/zdr/mapper/*.xml
+spring:
+  datasource:
+    url: jdbc:p6spy:mysql://106.54.229.27:3306/flowable-spring-boot?useUnicode=true&useSSL=true
+#    url: jdbc:p6spy:mysql://106.54.229.27:3306?useUnicode=true&useSSL=true
+    username: root
+    password: bank1234
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+
+logging:
+  file:
+    path: /logs/boot-example/mybaitsplusgenerator
+
+##公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.example.zdr.**.entity
+  mapperLocations: classpath*:com/example/zdr/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true

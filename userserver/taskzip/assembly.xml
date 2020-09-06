@@ -1,0 +1,62 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <!-- 使用assembly拷贝依赖包 -->
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/sys-lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <excludes>
+                <exclude>*:user-server:*</exclude>
+            </excludes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/batch/lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <include>*:user-server:*</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <!-- 从目标目录拷贝文件去压缩 -->
+<!--        <fileSet>-->
+<!--            <directory>target</directory>-->
+<!--            <includes>-->
+<!--                <include>*.jar</include>-->
+<!--            </includes>-->
+<!--            <outputDirectory>/</outputDirectory>-->
+<!--        </fileSet>-->
+<!--        <fileSet>-->
+<!--            <directory>target/lib</directory>-->
+<!--            <outputDirectory>/sys-lib</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include></include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
+<!--        <fileSet>-->
+<!--            <directory>target/lib</directory>-->
+<!--            <outputDirectory>/batch/lib</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>user-server*.jar</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
+
+        <!-- 从源目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>../config/PRD</directory>
+            <includes>
+                <include>*.properties</include>
+                <include>*.xml</include>
+            </includes>
+            <outputDirectory>/config</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
