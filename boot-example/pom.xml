@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <packaging>pom</packaging>
@@ -42,16 +42,28 @@
             <artifactId>hutool-all</artifactId>
             <version>5.4.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
+                <!--这个是JUnit5中为了支持使用JUint4所做的一个过度
+                  也就是说，你只需要在你的JUnit4旧项目中添加这个依赖，
+                  就能完美过渡，而不用修改之前代码
+                  这里用不到，自然也就排除了。当然，这里，它无关紧要
+                -->
                 <exclusion>
                     <groupId>org.junit.vintage</groupId>
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+<!--            <version>5.3.2</version>-->
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

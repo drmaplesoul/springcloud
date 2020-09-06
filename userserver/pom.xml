@@ -8,6 +8,7 @@
         <version>2.1.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>pom</packaging>
     <groupId>com.zdr.springcloud</groupId>
     <artifactId>user-server-parent</artifactId>
     <version>1.0.0</version>
@@ -17,6 +18,7 @@
     <modules>
         <module>user-server</module>
         <module>user-server-api</module>
+        <module>taskzip</module>
     </modules>
 
     <properties>
